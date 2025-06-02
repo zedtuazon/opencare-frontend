@@ -8,7 +8,6 @@
 </head>
 <body class="bg-gray-100 font-sans">
   <div class="max-w-2xl mx-auto py-12 px-6 sm:px-4">
-
     <!-- Logo + Heading Group -->
     <div class="flex flex-col items-center mb-10">
       <img
@@ -24,7 +23,7 @@
 
     <!-- Form Card -->
     <div class="bg-white rounded-lg shadow-lg p-8">
-      <form action="https://formsubmit.co/your.email@example.com" method="POST" class="space-y-6" id="onboardingForm">
+      <form id="onboardingForm" class="space-y-6">
         <div>
           <label for="practiceName" class="block font-medium text-gray-700 mb-1">What is the name of your dental practice? *</label>
           <input
@@ -48,80 +47,48 @@
           />
         </div>
 
-        <button
-          type="button"
-          id="addEmailBtn"
-          class="text-blue-600 hover:underline mb-6"
-        >
-          + Add another email
-        </button>
+        <button type="button" id="addEmailBtn" class="text-blue-600 hover:underline mb-6">+ Add another email</button>
 
         <div>
           <p class="block font-medium text-gray-700 mb-1">Have you set up your login access? *</p>
           <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="radio" name="login_access" value="Yes" required class="mr-2" /> Yes
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="login_access" value="No" required class="mr-2" /> No
-            </label>
+            <label class="flex items-center"><input type="radio" name="login_access" value="Yes" required class="mr-2" /> Yes</label>
+            <label class="flex items-center"><input type="radio" name="login_access" value="No" required class="mr-2" /> No</label>
           </div>
         </div>
 
         <div>
           <p class="block font-medium text-gray-700 mb-1">Have you reviewed the "Getting Started with Opencare" content? *</p>
           <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="radio" name="reviewed_content" value="Yes" required class="mr-2" /> Yes
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="reviewed_content" value="No" required class="mr-2" /> No
-            </label>
+            <label class="flex items-center"><input type="radio" name="reviewed_content" value="Yes" required class="mr-2" /> Yes</label>
+            <label class="flex items-center"><input type="radio" name="reviewed_content" value="No" required class="mr-2" /> No</label>
           </div>
         </div>
 
         <div>
           <p class="block font-medium text-gray-700 mb-1">Do you feel confident using the platform? *</p>
           <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="radio" name="confidence" value="Yes" required class="mr-2" /> Yes
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="confidence" value="Somewhat" required class="mr-2" /> Somewhat
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="confidence" value="No" required class="mr-2" /> No
-            </label>
+            <label class="flex items-center"><input type="radio" name="confidence" value="Yes" required class="mr-2" /> Yes</label>
+            <label class="flex items-center"><input type="radio" name="confidence" value="Somewhat" required class="mr-2" /> Somewhat</label>
+            <label class="flex items-center"><input type="radio" name="confidence" value="No" required class="mr-2" /> No</label>
           </div>
         </div>
 
         <div>
           <p class="block font-medium text-gray-700 mb-1">Do you have concerns about how the billing process works? *</p>
           <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="radio" name="billing_concerns" value="No" required class="mr-2" /> No
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="billing_concerns" value="Yes" required class="mr-2" /> Yes
-            </label>
+            <label class="flex items-center"><input type="radio" name="billing_concerns" value="No" required class="mr-2" /> No</label>
+            <label class="flex items-center"><input type="radio" name="billing_concerns" value="Yes" required class="mr-2" /> Yes</label>
           </div>
         </div>
 
         <div>
           <p class="block font-medium text-gray-700 mb-1">What is your top priority for onboarding? *</p>
           <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="radio" name="top_priority" value="Understanding how to book patients" required class="mr-2" /> Understanding how to book patients
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="top_priority" value="Optimizing my profile for visibility" required class="mr-2" /> Optimizing my profile for visibility
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="top_priority" value="Navigating billing and payments" required class="mr-2" /> Navigating billing and payments
-            </label>
-            <label class="flex items-center">
-              <input type="radio" name="top_priority" value="Something else" required class="mr-2" /> Something else
-            </label>
+            <label class="flex items-center"><input type="radio" name="top_priority" value="Understanding how to book patients" required class="mr-2" /> Understanding how to book patients</label>
+            <label class="flex items-center"><input type="radio" name="top_priority" value="Optimizing my profile for visibility" required class="mr-2" /> Optimizing my profile for visibility</label>
+            <label class="flex items-center"><input type="radio" name="top_priority" value="Navigating billing and payments" required class="mr-2" /> Navigating billing and payments</label>
+            <label class="flex items-center"><input type="radio" name="top_priority" value="Something else" required class="mr-2" /> Something else</label>
           </div>
         </div>
 
@@ -135,11 +102,6 @@
           />
         </div>
 
-        <!-- Hidden fields for FormSubmit -->
-        <input type="hidden" name="_autoresponse" value="Thanks for filling out the onboarding form! While we review it, check out our onboarding guide: https://example.com/guide" />
-        <input type="hidden" name="_next" value="thank-you.html" />
-        <input type="hidden" name="_captcha" value="false" />
-
         <div class="pt-4">
           <button type="submit" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-900 transition">Submit</button>
         </div>
@@ -148,21 +110,22 @@
   </div>
 
   <script>
+    // Handle dynamic additional email fields
     document.getElementById('addEmailBtn').addEventListener('click', function () {
       const container = document.getElementById('emailContainer');
       const newInput = document.createElement('input');
       newInput.type = 'email';
       newInput.name = 'results_emails[]';
       newInput.placeholder = 'email@example.com';
-      newInput.required = false; // only first email required
+      newInput.required = false;
       newInput.className = 'w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 mb-2';
       container.appendChild(newInput);
     });
 
+    // Show/hide custom priority input
     const topPriorityRadios = document.querySelectorAll('input[name="top_priority"]');
     const priorityDetailContainer = document.getElementById('priorityDetailContainer');
     const priorityDetailInput = document.getElementById('priorityDetail');
-
     topPriorityRadios.forEach(radio => {
       radio.addEventListener('change', () => {
         if (radio.value === 'Something else') {
@@ -174,6 +137,39 @@
           priorityDetailInput.value = '';
         }
       });
+    });
+
+    // Submit form via fetch
+    document.getElementById('onboardingForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (key.endsWith("[]")) {
+          const field = key.replace("[]", "");
+          if (!data[field]) data[field] = [];
+          data[field].push(value);
+        } else {
+          data[key] = value;
+        }
+      });
+
+      try {
+        const response = await fetch('https://opencarepreonboardingsurvey.onrender.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          window.location.href = 'thank-you.html';
+        } else {
+          alert('There was a problem submitting the form. Please try again later.');
+        }
+      } catch (error) {
+        alert('Error submitting form: ' + error.message);
+      }
     });
   </script>
 </body>
