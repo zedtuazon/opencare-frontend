@@ -36,7 +36,7 @@
         </div>
 
         <div id="emailContainer" class="mb-4">
-          <label for="email1" class="block font-medium text-gray-700 mb-1">Email(s) for Results and Training</label>
+          <label for="email1" class="block font-medium text-gray-700 mb-1">Email(s) for Results and Training *</label>
           <input
             id="email1"
             type="email"
@@ -110,8 +110,8 @@
   </div>
 
   <script>
-    // Handle dynamic additional email fields
-    document.getElementById('addEmailBtn').addEventListener('click', function () {
+    // Add more email fields dynamically
+    document.getElementById('addEmailBtn').addEventListener('click', () => {
       const container = document.getElementById('emailContainer');
       const newInput = document.createElement('input');
       newInput.type = 'email';
@@ -122,7 +122,7 @@
       container.appendChild(newInput);
     });
 
-    // Show/hide custom priority input
+    // Show/hide priority detail input
     const topPriorityRadios = document.querySelectorAll('input[name="top_priority"]');
     const priorityDetailContainer = document.getElementById('priorityDetailContainer');
     const priorityDetailInput = document.getElementById('priorityDetail');
@@ -139,17 +139,18 @@
       });
     });
 
-    // Submit form via fetch to backend API
-    document.getElementById('onboardingForm').addEventListener('submit', async function (e) {
+    // Submit form via fetch POST
+    document.getElementById('onboardingForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const formData = new FormData(this);
+      const formData = new FormData(e.target);
       const data = {};
+
       formData.forEach((value, key) => {
-        if (key.endsWith("[]")) {
-          const field = key.replace("[]", "");
-          if (!data[field]) data[field] = [];
-          data[field].push(value);
+        if (key.endsWith('[]')) {
+          const actualKey = key.slice(0, -2);
+          if (!data[actualKey]) data[actualKey] = [];
+          data[actualKey].push(value);
         } else {
           data[key] = value;
         }
